@@ -1,5 +1,6 @@
 package com.example.administrator.ui_make.ui.branchview;
 
+import com.example.administrator.ui_make.ui.branchview.viewgroup.LeafViewGroup.LeafOnClickListener;
 
 /**
  * Created by raise.yang on 18/05/31.
@@ -17,11 +18,10 @@ public interface IUpgradeView {
     void setTag(Object obj);
 
     Object getTag();
-
     /**
      * 设置显示文本
      */
-    IUpgradeView setText(String text);
+    IUpgradeView setText(String str);
 
     /**
      * 设置进度
@@ -47,8 +47,15 @@ public interface IUpgradeView {
     IUpgradeView setIdle();
 
 
+    /**
+     * 设置监听
+     * @param listener
+     */
+    IUpgradeView setLeafListener(LeafOnClickListener listener);
 
 
-
-
+    /*
+    *
+     */
+    void setState(int state);
 }

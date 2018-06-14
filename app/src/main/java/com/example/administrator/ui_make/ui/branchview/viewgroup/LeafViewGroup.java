@@ -14,16 +14,20 @@ import com.example.administrator.ui_make.R;
 import com.example.administrator.ui_make.ui.branchview.pieceview.RoundProgressView;
 import com.example.administrator.ui_make.ui.branchview.pieceview.ScaleCircleView;
 
-public class LeafViewGroup extends RelativeLayout {
+public class LeafViewGroup extends RelativeLayout implements View.OnClickListener{
     private static final String TAG = "LeafViewGroup";
-
+    public static final int CHECK_VERSION = 1;
+    public static final int DOWNLOAD_VERSION = 2;
+    public static final int UPGRADE_VERSION = 3;
+    public static final int DISABLE = 4;
 
 
     private ScaleCircleView scaleCircleView;
     private ImageView imageView;
     private TextView textView;
     private RoundProgressView roundProgress;
-
+    private LeafOnClickListener leafOnClickListener;
+    private int state = 1;
 
 
     public LeafViewGroup(@NonNull Context context) {
@@ -92,5 +96,34 @@ public class LeafViewGroup extends RelativeLayout {
         return roundProgress;
     }
 
+    public void setLeafOnClickListener(LeafOnClickListener l){
+        this.leafOnClickListener = l;
+        setOnClickListener(this);
+    }
+    @Override
+    public void onClick(View v) {
+        switch (state){
+            case CHECK_VERSION:
+                leafOnClickListener.checkVersion();
+                break;
+            case DOWNLOAD_VERSION:
+                leafOnClickListener.downloadVersion();
+                break;
+            case UPGRADE_VERSION:
+                leafOnClickListener.rebootUpgrade();
+                 break;
+        }
+    }
 
+    public static interface LeafOnClickListener{
+        void checkVersion();
+
+        void downloadVersion();
+
+        void rebootUpgrade();
+    }
+
+    public void setState(int state) {
+        this.state = state;
+    }
 }
