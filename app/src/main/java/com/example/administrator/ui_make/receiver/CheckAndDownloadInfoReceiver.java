@@ -31,8 +31,8 @@ public class CheckAndDownloadInfoReceiver extends BroadcastReceiver {
                 Log.d(TAG, "progress:" + progress);
                 break;
             case 3:
-                String policyException = intent.getStringExtra("policyException");
-                Log.d(TAG, "policyException:" + policyException);
+                String policyException = intent.getStringExtra("exception");
+                Log.d(TAG, "exception:" + policyException);
         }
     }
 }
