@@ -105,48 +105,4 @@ public class ScaleCircleView extends View {
         this.clearAnimation();
         this.startAnimation(animation);
     }
-
-    public void stopAnim(){
-        this.clearAnimation();
-    }
-
-    public int getProgressWidth() {
-        return progressWidth;
-    }
-
-    public void setProgressWidth(int progressWidth) {
-        this.progressWidth = progressWidth;
-    }
-
-    public int getRadii() {
-        return radii;
-    }
-
-    public void setRadii(int radii) {
-        this.radii = radii;
-    }
-
-    public RectF getOval() {
-        return oval;
-    }
-
-    public void setOval(RectF oval) {
-        this.oval = oval;
-    }
-
-    public int getScaleDensity() {
-        return scaleDensity;
-    }
-
-    public void setScaleDensity(int scaleDensity) {
-        this.scaleDensity = scaleDensity;
-    }
-
-    public int getScaleWidth() {
-        return scaleWidth;
-    }
-
-    public void setScaleWidth(int scaleWidth) {
-        this.scaleWidth = scaleWidth;
-    }
 }

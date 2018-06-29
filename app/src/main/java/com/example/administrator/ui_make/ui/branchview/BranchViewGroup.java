@@ -8,10 +8,8 @@ import android.view.LayoutInflater;
 import android.widget.FrameLayout;
 
 import com.example.administrator.ui_make.R;
-import com.example.administrator.ui_make.ui.branchview.IUpgradeView;
 import com.example.administrator.ui_make.ui.branchview.pieceview.RoundTextView;
-import com.example.administrator.ui_make.ui.branchview.viewgroup.LeafViewGroup;
-import com.example.administrator.ui_make.ui.branchview.viewgroup.LeafViewGroup.LeafOnClickListener;
+import com.example.administrator.ui_make.ui.branchview.viewgroup.LeafViewGroup;;
 
 public class BranchViewGroup extends FrameLayout implements IUpgradeView{
     private RoundTextView roundTextView;
@@ -39,11 +37,6 @@ public class BranchViewGroup extends FrameLayout implements IUpgradeView{
     }
 
 
-
-
-
-
-
     /**
      * 等待ui状态
      */
@@ -68,16 +61,7 @@ public class BranchViewGroup extends FrameLayout implements IUpgradeView{
 
 
 
-    @Override
-    public IUpgradeView setLeafListener(LeafOnClickListener listener){
-        leafViewGroup.setLeafOnClickListener(listener);
-        return this;
-    }
 
-    @Override
-    public void setState(int state) {
-        leafViewGroup.setState(state);
-    }
 
 
     @Override
@@ -115,8 +99,5 @@ public class BranchViewGroup extends FrameLayout implements IUpgradeView{
         goToWaitUi();
         return this;
     }
-
-
-
 
 }

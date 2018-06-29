@@ -68,20 +68,9 @@ public class RoundTextView extends AppCompatTextView {
     }
 
 
-    public int[] getCentre() {
-        return centre;
-    }
 
-    public void setCentre(int width,int height) {
+    private void setCentre(int width,int height) {
         centre = new int[]{width - radii - lineWidth/2 , height/2};
     }
 
-    public int[] getTextFrame() {
-        return textFrame;
-    }
-
-    public void setTextFrame(int width,int height) {
-        textFrame = new int[]{1,1};
-        this.textFrame = textFrame;
-    }
 }
